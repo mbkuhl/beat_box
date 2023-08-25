@@ -37,7 +37,7 @@ RSpec.describe LinkedList do
       expect(list.head.next_node).to eq(nil)
 
       list.append('deep')
-      expect(list.head.next_node.data).to eq("deept")
+      expect(list.head.next_node.data).to eq("deep")
       expect(list.head.next_node.next_node).to eq(nil)
     end
   end
@@ -80,11 +80,9 @@ RSpec.describe LinkedList do
 
       expect(list.to_string).to eq(nil)
       list.append("doop")
-
       expect(list.to_string).to eq("doop")
       list.append("deep")
-
-      expect(list.to_string).to eq("doop doop")
+      expect(list.to_string).to eq("doop deep")
     end
   end
 end
