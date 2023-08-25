@@ -1,9 +1,10 @@
 require './lib/node'
 
 class LinkedList
-  attr_reader :head
+  attr_reader :head, :test
   def initialize
     @head = nil
+    @test = nil
   end
 
   def append(data)
@@ -32,11 +33,11 @@ class LinkedList
     end
   end
 
-
   def to_string
     if @head == nil
       nil
     else
+      @test = @head
       string = @head.data
       current_node = @head
       until current_node.next_node == nil
@@ -44,6 +45,17 @@ class LinkedList
         string.insert(-1, " ").insert(-1, current_node.data)
       end
       string
+    end
+  end
+
+  def prepend(data)
+    if @head == nil
+      @head = Node.new(data)
+    else
+      @test = @head
+      node = Node.new(data)
+      node.next_node = @head
+      @head = node
     end
   end
 

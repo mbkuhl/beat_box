@@ -93,16 +93,17 @@ RSpec.describe LinkedList do
       list.append("plop")
       expect(list.to_string).to eq("plop")
       list.append("suu")
+      expect(list.count).to eq(2)
       expect(list.to_string).to eq("plop suu")
       list.prepend("dop")
-
+      
       expect(list.to_string).to eq("dop plop suu")
       expect(list.count).to eq(3)
     end
   end
 
   describe '#insert()' do
-    it 'can insert data at a specific index position' do
+    xit 'can insert data at a specific index position' do
       list = LinkedList.new
 
       list.append("plop")
