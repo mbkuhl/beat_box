@@ -29,7 +29,7 @@ RSpec.describe BeatBox do
   end
 
   describe '#count' do
-    xit 'can count nodes in linked list' do
+    it 'can count nodes in linked list' do
       bb = BeatBox.new
       bb.append("deep doo dit")
       bb.append("woo hoo shu")
