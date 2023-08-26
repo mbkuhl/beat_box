@@ -15,4 +15,6 @@ class BeatBox
     @list.count
   end
 
+  
+
 end
