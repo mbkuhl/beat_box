@@ -140,7 +140,7 @@ RSpec.describe LinkedList do
   end
 
   describe '#includes?()' do
-    xit 'determines if data is in linked list' do
+    it 'determines if data is in linked list' do
       list = LinkedList.new
       list.append("shi")
       list.append("shu")
@@ -150,7 +150,7 @@ RSpec.describe LinkedList do
       expect(list.includes?("deep")).to be true
     end
 
-    xit 'determines if data is not in linked list' do
+    it 'determines if data is not in linked list' do
       list = LinkedList.new
       list.append("shi")
       list.append("shu")

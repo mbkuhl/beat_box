@@ -100,9 +100,17 @@ class LinkedList
     end
   end
 
-
-
-
-
+  def includes?(string)
+    include = false
+    current_node = @head
+    until current_node.next_node == nil
+      if current_node.data == string
+        include = true
+        break
+      end
+      current_node = current_node.next_node
+    end 
+    include
+  end
 
 end
