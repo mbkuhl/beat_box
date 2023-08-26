@@ -162,14 +162,14 @@ RSpec.describe LinkedList do
   end
 
   describe '#pop' do
-    xit 'removes the last node from the linked list and returns its data' do
+    it 'removes the last node from the linked list and returns its data' do
       list = LinkedList.new
       list.append("shi")
       list.append("shu")
       list.prepend("woo")
       list.prepend("deep")
       list.append("blop")
-      expect(list.pop).to eq("blob")
+      expect(list.pop).to eq("blop")
       expect(list.pop).to eq("shu")
       expect(list.to_string).to eq("deep woo shi")
     end
