@@ -115,6 +115,65 @@ RSpec.describe LinkedList do
       expect(list.to_string).to eq("dop woo plop suu")
     end
   end
+
+  describe '#find()' do
+    it 'can find data at a specific index position' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      expect(list.to_string).to eq("deep woo shi shu blop")
+      expect(list.find(2,1)).to eq("shi")
+    end
+
+    it 'can also find multiple data points starting at a specific index' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      expect(list.find(1,3)).to eq("woo shi shu")
+    end
+  end
+
+  describe '#includes?()' do
+    xit 'determines if data is in linked list' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      expect(list.includes?("deep")).to be true
+    end
+
+    xit 'determines if data is not in linked list' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      expect(list.includes?("dep")).to be false
+    end
+  end
+
+  describe '#pop' do
+    xit 'removes the last node from the linked list and returns its data' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      expect(list.pop).to eq("blob")
+      expect(list.pop).to eq("shu")
+      expect(list.to_string).to eq("deep woo shi")
+    end
+  end
 end
 
 
