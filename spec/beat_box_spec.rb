@@ -10,7 +10,7 @@ RSpec.describe BeatBox do
       expect(bb).to be_an_instance_of(BeatBox)
     end
 
-    xit 'starts with an empty Linked List' do
+    it 'starts with an empty Linked List' do
       bb = BeatBox.new
 
       expect(bb.list).to be_an_instance_of(LinkedList)
@@ -37,6 +37,7 @@ RSpec.describe BeatBox do
       expect(bb.count).to eq(6)
     end
   end
+end
 
 
 
