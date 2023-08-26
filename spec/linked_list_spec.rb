@@ -173,6 +173,21 @@ RSpec.describe LinkedList do
       expect(list.pop).to eq("shu")
       expect(list.to_string).to eq("deep woo shi")
     end
+
+    it 'also works on the head node' do
+      list = LinkedList.new
+      list.append("shi")
+      list.append("shu")
+      list.prepend("woo")
+      list.prepend("deep")
+      list.append("blop")
+      list.pop
+      list.pop
+      list.pop
+      list.pop
+      expect(list.pop).to eq("deep")
+      expect(list.head).to eq(nil)
+    end
   end
 end
 
