@@ -19,12 +19,12 @@ RSpec.describe BeatBox do
   end
 
   describe '#append' do
-    xit 'can add multiple nodes from one string' do
+    it 'can add multiple nodes from one string' do
       bb = BeatBox.new
       bb.append("deep doo dit")
 
-      expect(bb.head.data).to eq("deep")
-      expect(bb.head.next_node.data).to eq("doo")
+      expect(bb.list.head.data).to eq("deep")
+      expect(bb.list.head.next_node.data).to eq("doo")
     end
   end
 
