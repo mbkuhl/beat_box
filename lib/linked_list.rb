@@ -34,16 +34,18 @@ class LinkedList
   end
 
   def to_string
+    @test = @head
     if @head == nil
       nil
     else
-      @test = @head
-      string = @head.data
+      string = "".insert(0 , @head.data)
+      # string = @head.data
       current_node = @head
       until current_node.next_node == nil
         current_node = current_node.next_node
         string.insert(-1, " ").insert(-1, current_node.data)
       end
+
       string
     end
   end
