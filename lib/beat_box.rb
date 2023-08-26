@@ -15,6 +15,8 @@ class BeatBox
     @list.count
   end
 
-  
-
+  def play
+    beats = self.list.to_string
+    `say -r 500 -v Boing #{beats}`
+  end
 end
