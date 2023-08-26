@@ -76,5 +76,33 @@ class LinkedList
     end
   end
 
+  def node_recorder(start, nodes)
+    string = '' 
+    string += start.data
+    (nodes-1).times do
+      start = start.next_node
+      string += " #{start.data}"
+    end
+    string
+  end
+
+  def find(index, nodes)
+    if index == 0
+      string = node_recorder(@head, nodes)
+    else
+      current_node = @head
+      current_index = 0
+      until current_index == index
+        current_node = current_node.next_node
+        current_index +=1
+      end
+      string = node_recorder(current_node, nodes)
+    end
+  end
+
+
+
+
+
 
 end
