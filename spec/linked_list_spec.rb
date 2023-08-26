@@ -104,7 +104,7 @@ RSpec.describe LinkedList do
   end
 
   describe '#insert()' do
-    xit 'can insert data at a specific index position' do
+    it 'can insert data at a specific index position' do
       list = LinkedList.new
 
       list.append("plop")

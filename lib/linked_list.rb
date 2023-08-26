@@ -54,11 +54,27 @@ class LinkedList
     if @head == nil
       @head = Node.new(data)
     else
-      @test = @head
       node = Node.new(data)
       node.next_node = @head
       @head = node
     end
   end
+
+  def insert(index, data)
+    if index == 0
+      prepend(data)
+    else
+      current_node = @head
+      current_index = 0
+      until current_index == (index-1)
+        current_node = current_node.next_node
+        current_index += 1
+      end
+      node = Node.new(data)
+      node.next_node = current_node.next_node
+      current_node.next_node = node
+    end
+  end
+
 
 end
