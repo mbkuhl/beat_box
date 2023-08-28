@@ -5,12 +5,13 @@ RSpec.describe Greenlist do
     it 'is an instance of greenlist' do
       greenlist = Greenlist.new
 
-      expect(greenlist).to be_an_instance_of(Greenist)
+      expect(greenlist).to be_an_instance_of(Greenlist)
     end
 
     it 'has a starter greenlist when created' do
-      list = LinkedList.new
+      greenlist = Greenlist.new
 
       expect(greenlist.sounds).to eq(["tee", "dee", "deep", "bop", "boop", "la", "na",])
     end
   end
+end
