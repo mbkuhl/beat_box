@@ -1,5 +1,6 @@
 require './lib/node'
 require './lib/linked_list'
+require './lib/greenlist'
 
 RSpec.describe LinkedList do
   describe '#initialize' do
