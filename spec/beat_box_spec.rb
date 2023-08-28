@@ -70,7 +70,8 @@ RSpec.describe BeatBox do
       expect(bb.count).to eq(6)
       expect(bb.list.count).to eq(6)
 
-      expect(bb.play).to eq('')
+      expect(bb).to receive(:`).with('say -r 500 -v Boing deep doo ditt woo hoo shu')
+      bb.play
     end
   end
 
@@ -90,7 +91,8 @@ RSpec.describe BeatBox do
       bb.play
       bb.rate = 100
 
-      expect(bb.play).to eq("")
+      expect(bb).to receive(:`).with('say -r 100 -v Boing deep dop dop deep')
+      bb.play
     end
 
     it 'can reset the rate to the default' do
@@ -99,7 +101,8 @@ RSpec.describe BeatBox do
       bb.play
       bb.reset_rate
 
-      expect(bb.play).to eq("")
+      expect(bb).to receive(:`).with('say -r 500 -v Boing deep dop dop deep')
+      bb.play
     end
   end
 
@@ -109,7 +112,8 @@ RSpec.describe BeatBox do
       bb.play
       bb.voice = "Daniel"
 
-      expect(bb.play).to eq("")
+      expect(bb).to receive(:`).with('say -r 500 -v Daniel deep dop dop deep')
+      bb.play
     end
 
     it 'can reset the voice to the default' do
@@ -118,7 +122,8 @@ RSpec.describe BeatBox do
       bb.play
       bb.reset_voice
 
-      expect(bb.play).to eq("")
+      expect(bb).to receive(:`).with('say -r 500 -v Boing deep dop dop deep')
+      bb.play
     end
   end
 end

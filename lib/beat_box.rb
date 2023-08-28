@@ -43,7 +43,7 @@ class BeatBox
   end
 
   def reset_voice
-    voice = "Boing"
+    @voice = "Boing"
   end
 
 end
