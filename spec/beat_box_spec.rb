@@ -17,6 +17,11 @@ RSpec.describe BeatBox do
       expect(bb.list).to be_an_instance_of(LinkedList)
       expect(bb.list.head).to eq(nil)
     end
+
+    it 'can take an argument and create a head' do
+      bb = BeatBox.new("deep")
+      expect(bb.all).to eq ("deep")
+    end 
   end
 
   describe '#append' do
@@ -26,6 +31,25 @@ RSpec.describe BeatBox do
 
       expect(bb.list.head.data).to eq("deep")
       expect(bb.list.head.next_node.data).to eq("doo")
+    end
+
+    it 'can only add sounds from greenlist' do
+      bb = BeatBox.new("deep")
+      bb.append("Mississippi")
+      expect(bb.all).to eq("deep")
+
+      bb.prepend("tee tee tee Mississippi")
+      expect(bb.all).to eq("tee tee tee deep")
+    end
+  end
+
+  describe '#prepend' do
+    it 'can add multiple nodes from one string to the beginning of a linked list' do
+      bb = BeatBox.new
+      bb.append("deep doo dit")
+      bb.prepend("woo hoo shu")
+
+      expect(bb.all).to eq ("woo hoo shu deep doo dit")
     end
   end
 
@@ -47,6 +71,16 @@ RSpec.describe BeatBox do
       expect(bb.list.count).to eq(6)
 
       expect(bb.play).to eq('')
+    end
+  end
+
+  describe '#all' do
+    it 'can list all sounds in beat box linked list' do
+      bb = BeatBox.new
+      bb.append("deep doo dit")
+      bb.append("woo hoo shu")
+
+      expect(bb.all).to eq("deep doo dit woo hoo shu")
     end
   end
 end
