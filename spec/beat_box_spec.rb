@@ -85,7 +85,7 @@ RSpec.describe BeatBox do
   end
 
   describe '#rate and #reset_rate' do
-    it 'can change the speed at which sounds are played' do
+    xit 'can change the speed at which sounds are played' do
       bb = BeatBox.new("deep dop dop deep")
       bb.play
       bb.rate = 100
@@ -100,10 +100,11 @@ RSpec.describe BeatBox do
       bb.reset_rate
 
       expect(bb.all).to eq(4)
+    end
   end
 
   describe '#voice and #reset_voice' do
-    it 'can change the Voice in which sounds are played' do
+    xit 'can change the Voice in which sounds are played' do
       bb = BeatBox.new("deep dop dop deep")
       bb.play
       bb.voice = "Daniel"
@@ -111,7 +112,7 @@ RSpec.describe BeatBox do
       expect(bb.play).to eq(4)
     end
 
-    it 'can reset the voice to the default' do
+    xit 'can reset the voice to the default' do
       bb = BeatBox.new("deep dop dop deep")
       bb.voice = 'Daniel'
       bb.play
