@@ -2,6 +2,7 @@ require './lib/node'
 require './lib/greenlist'
 
 class LinkedList
+  @@greenlist = Greenlist.new
   attr_reader :head, :test
   def initialize
     @head = nil
@@ -9,15 +10,25 @@ class LinkedList
   end
 
   def append(data)
-    if @head == nil
-      @head = Node.new(data)
-    else
-      current_node = @head
-      until current_node.next_node == nil
-        current_node = current_node.next_node
+    if @@greenlist.sounds.include?(data)
+      if @head == nil
+        @head = Node.new(data)
+      else
+        current_node = @head
+        until current_node.next_node == nil
+          current_node = current_node.next_node
+        end
+        current_node.next_node = Node.new(data)
       end
-      current_node.next_node = Node.new(data)
     end
+  end
+
+  def greenlist_add(sounds)
+    @@greenlist.add_sounds(sounds)
+  end
+
+  def greenlist_remove(sounds)
+    @@greenlist.remove_sounds(sounds)
   end
 
   def count
@@ -52,28 +63,32 @@ class LinkedList
   end
 
   def prepend(data)
-    if @head == nil
-      @head = Node.new(data)
-    else
-      node = Node.new(data)
-      node.next_node = @head
-      @head = node
+    if @@greenlist.sounds.include?(data)
+      if @head == nil
+        @head = Node.new(data)
+      else
+        node = Node.new(data)
+        node.next_node = @head
+        @head = node
+      end
     end
   end
 
   def insert(index, data)
-    if index == 0
-      prepend(data)
-    else
-      current_node = @head
-      current_index = 0
-      until current_index == (index-1)
-        current_node = current_node.next_node
-        current_index += 1
+    if @@greenlist.sounds.include?(data)
+      if index == 0
+        prepend(data)
+      else
+        current_node = @head
+        current_index = 0
+        until current_index == (index-1)
+          current_node = current_node.next_node
+          current_index += 1
+        end
+        node = Node.new(data)
+        node.next_node = current_node.next_node
+        current_node.next_node = node
       end
-      node = Node.new(data)
-      node.next_node = current_node.next_node
-      current_node.next_node = node
     end
   end
 

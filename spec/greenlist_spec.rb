@@ -41,7 +41,7 @@ RSpec.describe Greenlist do
 
     it 'can remove multiple sounds from greenlist' do
       greenlist = Greenlist.new
-      greenlist.add_sounds("dee la")
+      greenlist.remove_sounds("dee la")
 
       expect(greenlist.sounds).to eq(["tee", "deep", "bop", "boop", "na"])
     end
