@@ -130,19 +130,20 @@ class LinkedList
   end
 
   def pop
-    if @head.next_node == nil
-      data = @head.data
-      @head = nil
-      data
-    else
-      current_node = @head
-      until current_node.next_node.next_node == nil
-        current_node = current_node.next_node
+    if count != 0
+      if @head.next_node == nil
+        data = @head.data
+        @head = nil
+        data
+      else
+        current_node = @head
+        until current_node.next_node.next_node == nil
+          current_node = current_node.next_node
+        end
+        data = current_node.next_node.data
+        current_node.next_node = nil
+        data
       end
-      data = current_node.next_node.data
-      current_node.next_node = nil
-      data
     end
   end
-
 end

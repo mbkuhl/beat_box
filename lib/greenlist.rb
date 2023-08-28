@@ -1,7 +1,7 @@
 class Greenlist
   attr_reader :sounds
   def initialize
-    @sounds = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doop", "plop", "suu", "dop", "woo", "shi", "shu", "blop"]
+    @sounds = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doop", "plop", "suu", "dop", "woo", "shi", "shu", "blop", "dit", "doo", "hoo", "ditt"]
   end
 
   def add_sounds(sounds)
