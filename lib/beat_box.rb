@@ -16,7 +16,7 @@ class BeatBox
   end
 
   def play
-    beats = self.list.to_string
+    beats = list.to_string
     `say -r 500 -v Boing #{beats}`
   end
 end
