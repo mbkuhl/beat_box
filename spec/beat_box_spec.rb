@@ -1,6 +1,7 @@
 require './lib/beat_box'
 require './lib/linked_list'
 require './lib/node'
+require './lib/greenlist'
 
 RSpec.describe BeatBox do
   describe '#initialize' do

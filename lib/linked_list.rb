@@ -1,4 +1,5 @@
 require './lib/node'
+require './lib/greenlist'
 
 class LinkedList
   attr_reader :head, :test
