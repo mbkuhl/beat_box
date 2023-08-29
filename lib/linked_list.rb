@@ -6,7 +6,6 @@ class LinkedList
   attr_reader :head, :test
   def initialize
     @head = nil
-    @test = nil
   end
 
   def append(data)
@@ -46,7 +45,6 @@ class LinkedList
   end
 
   def to_string
-    @test = @head
     if @head == nil
       nil
     else
